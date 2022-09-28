@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { toastComponent } from '@/utils/index'
+import { toastComponent } from '@/utils'
 const CancelToken = axios.CancelToken
 
 class fetch {

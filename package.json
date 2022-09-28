@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve ",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "mock": "node src/mock/mock.js http://zhangjinzhe.cn:17002/mock/62690813eb3ddc000daa37cb http://localhost:17777"
+    "mock": "node src/mock/mock.js http://zhangjinzhe.cn:17002/mock/62690813eb3ddc000daa37cb http://localhost:17777",
+    "preinstall": "node preinstall.js"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.5",

@@ -1,16 +1,18 @@
 <template>
   <form>
     <div class="row">
-      <div class="col-md-4 mt-2">
-        <input id="email" class="form-control" type="email" placeholder="邮箱" />
+      <div class="form-floating col-md-4 mt-2">
+        <input id="email" class="form-control" type="email" />
+        <label for="email" class="ps-4">邮箱</label>
       </div>
       <div class="col-md-6 mt-2 d-table-cell">
         <button class="btn btn-primary align-middle">发送验证码</button>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4 mt-2">
-        <input id="email" class="form-control" type="email" placeholder="昵称" />
+      <div class="form-floating col-md-4 mt-2">
+        <input id="email" class="form-control" type="email" />
+        <label for="email" class="ps-4">昵称</label>
       </div>
     </div>
     <div class="row">
@@ -23,13 +25,14 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4 mt-2">
-        <input id="email" class="form-control" type="email" placeholder="城市" />
+      <div class="form-floating col-md-4 mt-2">
+        <input id="email" class="form-control" type="email" />
+        <label for="email" class="ps-4">城市</label>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8 mt-2">
-        <textarea rows="4" class="form-control" placeholder="城市" />
+        <textarea rows="4" class="form-control" placeholder="签名" />
       </div>
     </div>
     <div class="row">

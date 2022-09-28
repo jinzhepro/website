@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import { getStorage } from 'wanado/src/sources/getStorage'
+import { toastComponent } from '@/utils'
 
 Vue.use(VueRouter)
 
@@ -42,6 +44,14 @@ const routes = [
     redirect: '/center/user',
     component: () => import('@/views/userCenter/index'),
     name: 'UserCenter',
+    beforeEnter (to, form, next) {
+      if (!getStorage('userInfo')) {
+        toastComponent.$alert('danger', '请先登录!')
+        next({ name: 'LoginPage' })
+      } else {
+        next()
+      }
+    },
     children: [
       {
         path: 'user',
@@ -73,8 +83,20 @@ const routes = [
         ]
       }, {
         path: 'posts',
+        redirect: '/center/posts/my',
         component: () => import('@/views/userCenter/components/posts'),
-        name: 'Posts'
+        name: 'Posts',
+        children: [
+          {
+            path: 'my',
+            component: () => import('@/views/userCenter/components/posts/my'),
+            name: 'My'
+          }, {
+            path: 'collection',
+            component: () => import('@/views/userCenter/components/posts/collection'),
+            name: 'Collection'
+          }
+        ]
       }, {
         path: 'message',
         component: () => import('@/views/userCenter/components/message'),

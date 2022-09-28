@@ -44,7 +44,7 @@ export default {
   },
   created () {
     if (!getStorage('uuid')) {
-      setStorage('uuid', v4())
+      setStorage({ key: 'uuid', value: v4() })
     }
     this.getCaptcha()
   },
@@ -70,6 +70,7 @@ export default {
       }, {
         toast: true
       })
+      console.log(data)
       await setStorage({ key: 'userInfo', value: { ...data.data, token: data.token } })
       await this.$router.push({ path: this.$route.query.refresh || '/home/index' })
     }

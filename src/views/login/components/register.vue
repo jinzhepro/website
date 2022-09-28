@@ -58,7 +58,7 @@ export default {
   },
   created () {
     if (!getStorage('uuid')) {
-      setStorage('uuid', v4())
+      setStorage({ key: 'uuid', value: v4() })
     }
     this.getCaptcha()
   },
